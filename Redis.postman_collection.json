@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "8adda0c2-eac6-41bc-9b11-26e8478c4fd4",
+		"name": "Redis",
+		"description": "APis For Redis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RedisString",
+			"item": [
+				{
+					"name": "Add Programmer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":\"1\",\"name\":\"Jordan\",\"company\":\"sdk\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/programmer-string",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programmer-string"
+							]
+						},
+						"description": "Tp add Programmer"
+					},
+					"response": []
+				},
+				{
+					"name": "Retirive Programmer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/programmer-string/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programmer-string",
+								"1"
+							]
+						},
+						"description": "To retrive Programmer From Redis.In my sample code expire time is 10 sec.SO if u retirvie before that then it is good otherwsie enter again and retrive in next 10 sec"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RedisList",
+			"item": [
+				{
+					"name": "addProgrammerToList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"company\":\"sdk\",\"name\":\"Jordan\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/programmers-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programmers-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProgrammerList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/programmers-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programmers-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProgrammerListCount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RedisSet",
+			"item": [
+				{
+					"name": "addProgrammerToSet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n{\"id\":40,\"company\":\"sdk1\",\"name\":\"Sumit\"},\n{\"id\":60,\"company\":\"sdk2\",\"name\":\"Gaurav\"},\n{\"id\":80,\"company\":\"sdk3\",\"name\":\"Abhijeet\"}\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8080/programmers-set",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programmers-set"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProgrammerSet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "isInProgrammerSet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hash",
+			"item": [
+				{
+					"name": "saveHash",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"id\": 200,\n\t\t\"company\": \"hash\",\n\t\t\"name\": \"Sumit\"\n\t}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/programmers-hash",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programmers-hash"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateHash",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"id\": 200,\n\t\t\"company\": \"hash\",\n\t\t\"name\": \"Sumit\"\n\t}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/programmers-hash",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programmers-hash"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findALLHash",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/programmers-hash",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programmers-hash"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findInHash",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/programmers-hash/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"programmers-hash",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteHash",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pub/Sub",
+			"item": [
+				{
+					"name": "Send and recieve data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
